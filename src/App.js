@@ -1,7 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
-import Button from './componnent/Button';
+import Button from './components/Button';
 
 function App() {
   return (
