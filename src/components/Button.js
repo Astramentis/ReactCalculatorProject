@@ -4,7 +4,7 @@ import './Button.css';
 class Button extends Component {
   render() {
       return (
-          <div className="App">
+          <div className="button">
           {this.props.children}
           </div>
       );}
