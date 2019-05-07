@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 import './App.css';
 import Button from './components/Button';
+import Input from './components/Input';
 
 function App() {
   return (
     <div className="App">
       <div className="calc-wrapper">
+      <div className = "row">
+        <Input></Input>
+      </div>
       <div className="row">
         <Button>7</Button>
         <Button>8</Button>
