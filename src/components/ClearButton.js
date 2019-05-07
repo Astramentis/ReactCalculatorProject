@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import './Input.css';
+import './ClearButton.css';
 
-class Input extends Component {
+class ClearButton extends Component {
   render() {
       return (
-        <div className="input"> 
+        <div className="clear-btn"> 
          {this.props.children}
         </div>
       );};
   }
 
-export default Input;
+export default ClearButton;
