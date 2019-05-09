@@ -4,15 +4,32 @@ import Button from './components/Button';
 import Input from './components/Input';
 import ClearButton from './components/ClearButton';
 
-function App() {
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      input: "",
+      previousNumber: "",
+      currentNumber: "",
+      operator: ""
+    };
+  }
+
+  addToInput = val => {
+    this.setState({ input: this.state.input + val});
+  };
+
+  render(){
   return (
     <div className="App">
       <div className="calc-wrapper">
       <div className = "row">
-        <Input></Input>
+        <Input>{this.state.input}</Input>
       </div>
       <div className="row">
-        <Button>7</Button>
+        <Button handleClick = {this.addToInput}
+        >7</Button>
         <Button>8</Button>
         <Button>9</Button>
         <Button>/</Button>
@@ -40,7 +57,8 @@ function App() {
       </div>
     </div>
     </div>
-  );
+    );
+  }
 }
 
 export default App;
