@@ -26,6 +26,13 @@ class App extends Component {
       this.setState({ input:this.state.input + val});
     }
   }
+  
+  addDecimal = val =>{
+    //avoid 2 or more decimals
+    if (this.state.input.indexOf(".") === -1){
+      this.setState({input: this.state.input + val});
+    }
+  };
 
   render(){
   return (
@@ -65,7 +72,7 @@ class App extends Component {
         >+</Button>
       </div>
       <div className="row">
-      <Button handleClick = {this.addToInput}
+      <Button handleClick = {this.addDecimal}
         >.</Button>
         <Button handleClick = {this.addZeroToInput}
         >0</Button>
