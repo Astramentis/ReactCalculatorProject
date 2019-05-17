@@ -14,7 +14,7 @@ class App extends Component {
       currentNumber: "",
       operator: ""
     };
-  }
+  };
 
   addToInput = val => {
     this.setState({ input: this.state.input + val});
@@ -25,7 +25,7 @@ class App extends Component {
     if (this.state.input !== "") {
       this.setState({ input:this.state.input + val});
     }
-  }
+  };
   
   addDecimal = val =>{
     //avoid 2 or more decimals
@@ -35,8 +35,24 @@ class App extends Component {
   };
 
   clearInput = val =>{
-    this.setState({input:""});
-  }
+    this.setState({input: "" });
+  };
+
+  add = () => {
+    this.state.previousNumber = this.state.input;
+    this.setState({ input: "" });
+    this.state.operater = "plus";
+  };
+
+  evaluate = () => {
+    this.state.currentNumber= this.state.input;
+    if (this.state.operator = "plus"){
+      this.setState({
+        input : parseInt (this.state.previousNumber) +
+        parseInt(this.state.currentNumber) 
+      });
+    }
+  };
 
   render(){
   return (
@@ -72,7 +88,7 @@ class App extends Component {
         >2</Button>
         <Button handleClick = {this.addToInput}
         >3</Button>
-        <Button handleClick = {this.addToInput}
+        <Button handleClick = {this.add}
         >+</Button>
       </div>
       <div className="row">
@@ -80,7 +96,7 @@ class App extends Component {
         >.</Button>
         <Button handleClick = {this.addZeroToInput}
         >0</Button>
-        <Button handleClick = {this.addToInput}
+        <Button handleClick = {this.evaluate}
         >=</Button>
         <Button handleClick = {this.addToInput}
         >-</Button>
@@ -90,7 +106,7 @@ class App extends Component {
         Clear</ClearButton>
       </div>
     </div>
-    </div>
+  </div>
     );
   }
 }
