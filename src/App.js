@@ -64,34 +64,34 @@ class App extends Component {
 
 
   evaluate = () => {
-    this.state.currentNumber = this.state.input;
+    this.setState.currentNumber = this.setState.input;
 
-    if (this.state.operator == "plus"){
+    if (this.setState.operator == "plus") {
       this.setState({
-        input : 
-          parseInt (this.state.previousNumber) +
-          parseInt (this.state.currentNumber) 
+        input:
+          parseFloat(this.state.previousNumber) +
+          parseFloat(this.state.currentNumber)
       });
-    } else if (this.state.operator == "subtract"){
+    } else if (this.setState.operator == "subtract") {
       this.setState({
-        input :
-          parseInt (this.state.previousNumber) -
-          parseInt (this.state.currentNumber) 
+        input:
+          parseFloat(this.state.previousNumber) -
+          parseFloat(this.state.currentNumber)
       });
-    } else if (this.state.operator == "multiply"){
+    } else if (this.setState.operator == "multiply") {
       this.setState({
-        input :
-          parseInt (this.state.previousNumber) *
-            parseInt (this.state.currentNumber) 
-        });
-    } else if (this.state.operator == "divide"){
+        input:
+          parseFloat(this.state.previousNumber) *
+          parseFloat(this.state.currentNumber)
+      });
+    } else if (this.setState.operator == "divide") {
       this.setState({
-        input :
-          parseInt (this.state.previousNumber) /
-          parseInt (this.state.currentNumber) 
-        });
-      } 
-    };
+        input:
+          parseFloat(this.state.previousNumber) /
+          parseFloat(this.state.currentNumber)
+      });
+    }
+  };
 
   render(){
     return (
